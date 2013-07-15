@@ -1,4 +1,6 @@
+==
 Liczenie elementów DOM
+==
 
 Optymalizacja kodu lub poszukiwanie błędów wymaga od programistów sprawnego poruszania się
 w modelu obiektowym. Odnalezienie elementu od danym identyfikatorze czy klasie nie jest wcale trudne,
