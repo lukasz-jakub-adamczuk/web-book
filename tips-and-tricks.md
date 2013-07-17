@@ -1,5 +1,13 @@
 
 
+
+# Chapter 1
+
+## CSS
+
+Oto początek mojego rozdziału książki i wogóle tego co chce napisać.
+
+
 ## Rozmazany tekst
 
 Hej, dziś krótko.
@@ -189,3 +197,147 @@ p {
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
 VERIFY
+
+
+
+## Warunkowe logowanie
+
+Dobrze wiemy, że JavaScript to bardzo elastyczny język. Nieraz potrzebujemy warunkowego
+wykonania instrukcji. Dla łatwiejszego zrozumienia przykładu tworzymy prosty obiekt
+
+```javascript
+var user = {
+	name: 'Luke',
+	showName: function() {
+		return 'Name: ' + this.name;
+	}
+};
+```
+
+Obiekt użytkownika zawiera nazwę i funkcję. Nasz cel to wyświetlenie `user.name`, jeśli
+istnieje obiekt `user`.
+
+```javascript
+console.log(user && user.name);
+```
+
+W ten sposób wyświetlisz w konsoli właśność `name`, jeśli istnieje obiekt `user`.
+Możliwości tego triku nie kończą się na przekazaniu właśności obiektu. A może funkcja?
+
+```javascript
+console.log(user && user.showName());
+
+Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
+
+
+## Liczenie elementów DOM
+
+Optymalizacja kodu lub poszukiwanie błędów wymaga od programistów sprawnego poruszania się
+w modelu obiektowym. Odnalezienie elementu od danym identyfikatorze czy klasie nie jest wcale trudne,
+ale tak prozaiczne czynności często nie wystarczają do rozwiązania problemu.
+
+Ile elementów zawiera nasza strona?
+
+```javascript
+var all = document.getElementsByTagName('*');
+var ids = 0, classes = 0;
+for (var i = all.length; i--;) {
+	if (all[i].id !== '') {
+		ids++;
+	}
+	if (all[i].className !== '') {
+		classes++;
+	}
+}
+'all: ' + all.length + ', ids: ' + ids + ', classes: ' + classes;
+```
+
+
+## Wzorzec modułu
+
+Brak klas w JavaScript stanowi spory problem dla początkujących programistów. Często 
+
+Tworzymy
+
+```javascript
+var aya = aya || {};
+
+aya.framework = function() {
+
+	// private property
+	var version = '0.0.2';
+
+	// private method
+	var getVersion = function() {
+		return version;
+	}
+
+	// all returned is a public
+	return {
+
+		// initialization
+		init: function() {
+			console.log('init successful...');
+		},
+
+		printModuleVersion: function() {
+			console.log('Version: ' + getVersion());
+		}
+	}
+}();
+```
+
+Przygotowany w ten sposób obiekt przechowuje wewnątrz pewne zmienne jako prywatne.
+Natomiast kod zwracany jest traktowany jako publiczny. Ten prosty sposób pozwala
+na ukrycie części implementacji i dostęp spoza samego obiektu.
+
+```javascript
+aya.framework.init();
+
+Jak się spodziewamy w konsoli wyświetli się informacja o inicjalizacji obiektu.
+
+```javascript
+aya.framework.printModuleVersion();
+```
+
+Podobnie będzie, kiedy sprawdzimy wersję naszego obiektu, ale możliwe będzie to
+jedynie poprzez publiczną metodę.
+
+```javascript
+aya.framework.printModuleVersion();
+```
+
+Próba uzyzkania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
+błędem, czyli dokładnie jak powinno.
+
+```console
+> TypeError: Object #<Object> has no method 'getVersion'
+```
+
+
+
+## Domyślne wartości zmiennych
+
+Nie zawsze wiesz czy szukana zmienna istnieje lub została zainicjalizowana. Ponowne 
+przypisanie wartości zatrze informacje o dotychczasowej zmiennej. Istnieje łatwe
+sprzwdzenie czy istnieje dana zmienna lub przypisanie jej wartości domyślnej.
+
+```javascript
+var app = app || {};
+```
+
+Przykładowe użycie...
+
+
+## Tak lub nie
+
+???
+
+```javascript
+if (Math.round(Math.random())) {
+	// do if true
+} else {
+	// do if false
+}
+```
+Bardzo prosty sposób na symulowanie działania naszego skryptu.
