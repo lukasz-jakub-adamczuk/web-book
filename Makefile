@@ -1,14 +1,13 @@
 #include_dir=build
-source=chapters/css/*.md
+source=src/chapters/css/*.md
 title='Tips and tricks for the Web'
 filename='tips-and-tricks'
 
-
-
 all: pdf
 
-#markdown:
-#	awk 'FNR==1{print ""}{print}' $(source) > $(filename).md
+markdown:
+	awk 'FNR==1{print ""}{print}' $(source) > $(filename).md
+
 
 #pdf: markdown
 pdf:

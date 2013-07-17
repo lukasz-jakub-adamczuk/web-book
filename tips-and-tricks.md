@@ -1,4 +1,5 @@
 
+
 ## Rozmazany tekst
 
 Hej, dziś krótko.
@@ -13,6 +14,7 @@ Poniżej macie prosty tip na to jak przy pomocy CSS zrobić rozmazany tekst.
 
 Skalę rozmazania możecie zmienić manipulując wartością opactity kodu rgba, a także wartością rozmycia właściwości text-shadow. Proste.
 Dodatkowo mam dla was bardzo ciekawy tester prezentacji fontów dla urządzeń mobilnych. Tutaj w wygodny sposób możecie sprawdzić jak wybrany przez was font prezentuje się na ekranach telefonów i tabletów. Opcjonalnie można zmienić rozmiar testowanego kroju a także jego rozmieszczenie względem ekranu.
+
 
 ## Clearfix
 
@@ -60,6 +62,7 @@ Aktaulna wersja, jeśli potrzebujesz wsparcia w IE8 lub nowszych przeglądarkach
 }
 ```
 
+
 ## Krótsze kody kolorów
 
 Używanie skróconych kodów kolorów nie jest niczym nowym, ale wiele osób zwyczajnie, o tym zapomina. Niektórzy użytkownicy pamiętają jeszcze 216 bezpiecznych kolorów w przeglądarkach, choć dostępne spektrum dla 3 składowych to 256^3, czyli 16777216 kolorów.
@@ -92,6 +95,7 @@ Potrzebowaliśmy koloru `#c54218`, a otrzymaliśmy `#cc4411`, czy całkiem blisk
 
 Dla wyjaśnienia ciemniejszy i najbliższy białemu kolor to `#eee`, który jest dość ciemny.
 
+
 ## Połącz razem wiele skrótów i wartości definicji
 
 Nieustanna optymalizacja naszych stylów, prowadzi czasami do trudnych w odnalezieniu błędów. Nadpisywanie właściwości skrótowych jest dobrym rozwiązanie, bo często zaoszczędzamy kilka znaków w naszych stylach.
@@ -119,6 +123,7 @@ Zatem wystarczyłoby samo zdefiniowanie samych kolorów. O ile mniej kodu. Szybk
 
 Jeśli nadpisujemy pojedyncze właściwości lub style, przeważnie lepsze jest zdefiniowanie tego samego raz i odpowiednie nadpisanie reguły.
 
+
 ## Krótsze definicje właściwości
 
 Arkusze stylów kaskadowych zostały pomyślane w ten sposób, aby programiści tworzyli kod jak najszybciej. Poszczególne właściwości zawierają szereg skrótów, które w jednej linii definiują wiele właściwości.
@@ -141,6 +146,7 @@ Prosta definicja `border` umożliwia ustawienie zarównie wielkości obramowania
 ```
 
 Po pierwsze waga pliku CSS jest większa. Dodatkowo analiza takich stylów bywa kłopotliwa, bo zmiana w jednym miejscu, bywa nadpisywana kolejną regułą w dalszej części.
+
 
 ## Skrótowe wartości właściwości
 
@@ -183,18 +189,3 @@ p {
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
 VERIFY
-
-## Liczenie elementów DOM
-
-Optymalizacja kodu lub poszukiwanie błędów wymaga od programistów sprawnego poruszania się
-w modelu obiektowym. Odnalezienie elementu od danym identyfikatorze czy klasie nie jest wcale trudne,
-ale tak prozaiczne czynności często nie wystarczają do rozwiązania problemu.
-
-Ile elementów zawiera nasza strona?
-
-```javascript
-var all = document.getElementsByTagName("*");
-var ids = 0, classes = 0;
-for (var i = all.length; i--;) { if (all[i].id !== '') ids++; if (all[i].className !== '') classes++; }
-'all: ' + all.length + ', ids: ' + ids + ', classes: ' + classes;
-```
