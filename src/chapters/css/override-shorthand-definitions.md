@@ -1,5 +1,5 @@
 
-## Krótsze definicje właściwości
+### Krótsze definicje właściwości
 
 Arkusze stylów kaskadowych zostały pomyślane w ten sposób, aby programiści tworzyli kod jak najszybciej. Poszczególne właściwości zawierają szereg skrótów, które w jednej linii definiują wiele właściwości.
 

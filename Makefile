@@ -10,13 +10,13 @@ all: pdf
 #	awk 'FNR==1{print ""}{print}' src/chapters/$(chapter)/*.md > tmp/$(chapter).md
 #done
 
-#awk 'FNR==1{print ""}{print}' src/chapters/css/*.md > tmp/css.md
-#awk 'FNR==1{print ""}{print}' src/chapters/js/*.md > tmp/js.md
+awk 'FNR==1{print ""}{print}' src/chapters/css/*.md > ./tmp/css.md
+awk 'FNR==1{print ""}{print}' src/chapters/js/*.md > ./tmp/js.md
 
 markdown:
-	awk 'FNR==1{print ""}{print}' $(source) > $(filename).md
+#	awk 'FNR==1{print ""}{print}' $(source) > $(filename).md
 
-#awk 'FNR==1{print ""}{print}' tmp/*.md > tips-and-tricks.md
+awk 'FNR==1{print ""}{print}' tmp/*.md > tips-and-tricks.md
 
 pdf: markdown
 #pdf:

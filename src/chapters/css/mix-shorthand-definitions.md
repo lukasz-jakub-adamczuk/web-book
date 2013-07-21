@@ -1,5 +1,5 @@
 
-## Połącz razem wiele skrótów i wartości definicji
+### Połącz razem wiele skrótów i wartości definicji
 
 Nieustanna optymalizacja naszych stylów, prowadzi czasami do trudnych w odnalezieniu błędów. Nadpisywanie właściwości skrótowych jest dobrym rozwiązanie, bo często zaoszczędzamy kilka znaków w naszych stylach.
 

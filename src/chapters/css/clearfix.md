@@ -1,5 +1,5 @@
 
-## Clearfix
+### Clearfix
 
 Prawdopodobnie najpolularniejszy trik jaki stosowano przy tworzeniu stron internetowych.
 
@@ -19,7 +19,7 @@ Prawdopodobnie najpolularniejszy trik jaki stosowano przy tworzeniu stron intern
 /* close commented backslash hack */
 ```
 
-Nicolas Gallagher opisał dokładnie ("micro" clearfix)[http://nicolasgallagher.com/micro-clearfix-hack/], który jest nowszym podejściem do tematu.
+Nicolas Gallagher opisał dokładnie ["micro" clearfix](http://nicolasgallagher.com/micro-clearfix-hack/), który jest nowszym podejściem do tematu.
 
 ```css
 .group:before,
