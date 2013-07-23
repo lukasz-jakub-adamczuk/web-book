@@ -1,5 +1,5 @@
 
-### Rozmazany tekst
+## Rozmazany tekst
 
 Hej, dziś krótko.
 Poniżej macie prosty tip na to jak przy pomocy CSS zrobić rozmazany tekst.

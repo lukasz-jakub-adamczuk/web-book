@@ -39,6 +39,7 @@ na ukrycie części implementacji i dostęp spoza samego obiektu.
 
 ```javascript
 aya.framework.init();
+```
 
 Jak się spodziewamy w konsoli wyświetli się informacja o inicjalizacji obiektu.
 
@@ -56,7 +57,19 @@ aya.framework.printModuleVersion();
 Próba uzyzkania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
 błędem, czyli dokładnie jak powinno.
 
-```console
+```shell
+> TypeError: Object #<Object> has no method 'getVersion'
+```
+
+```terminal
+> TypeError: Object #<Object> has no method 'getVersion'
+```
+
+```sh
+> TypeError: Object #<Object> has no method 'getVersion'
+```
+
+```shell
 > TypeError: Object #<Object> has no method 'getVersion'
 ```
 

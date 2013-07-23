@@ -25,5 +25,6 @@ Możliwości tego triku nie kończą się na przekazaniu właśności obiektu. 
 
 ```javascript
 console.log(user && user.showName());
+```
 
 Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.

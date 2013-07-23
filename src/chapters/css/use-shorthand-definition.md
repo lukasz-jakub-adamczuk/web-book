@@ -1,5 +1,5 @@
 
-### Skrótowe wartości właściwości
+## Skrótowe wartości właściwości
 
 Używanie skróconych definicji niesie wiele korzyści. Jeśli w jednym momencie definiujemy zbiór wspólnych wartości zmniejszamy wielkość stylów. Dodatkowo dajemy sobie łatwą możliwość zmiany wyglądu w jednej linii, bez dopisywania kolejnych reguł.
 
