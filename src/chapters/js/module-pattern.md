@@ -50,7 +50,7 @@ Podobnie będzie, kiedy sprawdzimy wersję naszego obiektu, ale możliwe będzi
 jedynie poprzez publiczną metodę.
 
 ```javascript
-aya.framework.printModuleVersion();
+aya.framework.getVersion();
 ```
 
 Próba uzyzkania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
