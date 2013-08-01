@@ -39,6 +39,7 @@ na ukrycie części implementacji i dostęp spoza samego obiektu.
 
 ```javascript
 aya.framework.init();
+```
 
 Jak się spodziewamy w konsoli wyświetli się informacja o inicjalizacji obiektu.
 
@@ -53,7 +54,7 @@ jedynie poprzez publiczną metodę.
 aya.framework.getVersion();
 ```
 
-Próba uzyzkania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
+Próba uzyskania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
 błędem, czyli dokładnie jak powinno.
 
 ```console

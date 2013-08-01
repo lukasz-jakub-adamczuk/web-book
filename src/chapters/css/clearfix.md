@@ -1,5 +1,5 @@
 
-### Clearfix
+## Clearfix
 
 Prawdopodobnie najpolularniejszy trik jaki stosowano przy tworzeniu stron internetowych.
 
