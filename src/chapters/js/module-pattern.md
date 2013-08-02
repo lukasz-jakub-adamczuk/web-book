@@ -51,25 +51,13 @@ Podobnie będzie, kiedy sprawdzimy wersję naszego obiektu, ale możliwe będzi
 jedynie poprzez publiczną metodę.
 
 ```javascript
-aya.framework.printModuleVersion();
+aya.framework.getVersion();
 ```
 
-Próba uzyzkania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
+Próba uzyskania wersji przy użyciu metody prywatnej poza obiektem, kończy się 
 błędem, czyli dokładnie jak powinno.
 
-```shell
-> TypeError: Object #<Object> has no method 'getVersion'
-```
-
-```terminal
-> TypeError: Object #<Object> has no method 'getVersion'
-```
-
-```sh
-> TypeError: Object #<Object> has no method 'getVersion'
-```
-
-```shell
+```console
 > TypeError: Object #<Object> has no method 'getVersion'
 ```
 
