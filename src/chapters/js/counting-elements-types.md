@@ -17,10 +17,12 @@ for (var i = all.length; i--;) {
 	}
 }
 console.log('*: ' + all.length);
+```
 
 Określenie liczby wszystkich elementów naszej strony to proste zadanie. Niewiele trudniej
 uzyskamy inforamcje o liczbie różnych znaczników, a od tegu już prosta droga do optymalizacji.
 
+```javascript
 var sortable = [];
 for (var tag in types) {
 	sortable.push([tag, types[tag]]);
@@ -35,4 +37,3 @@ do {
 
 Teraz dokładnie wiemy ile znaczników `<div>` lub `<span>` zawiera badana strona.
 Sami wyciągamy wnioski czy każdy z nich jest konieczny.
-
