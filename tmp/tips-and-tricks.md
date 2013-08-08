@@ -307,14 +307,6 @@ p {
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
 VERIFY
-src/chapters/js/00-chapter.md
-src/chapters/js/conditional-logging.md
-src/chapters/js/counting-elements.md
-src/chapters/js/counting-elements-types.md
-src/chapters/js/module-pattern.md
-src/chapters/js/think-about-loop-control.md
-src/chapters/js/variable-default-value.md
-src/chapters/js/yes-or-not.md
 \newpage
 
 # JavaScript
@@ -324,35 +316,157 @@ src/chapters/js/yes-or-not.md
 Najczęściej spotykanym zatosowaniem języka JavaScript są strony WWW. Skrypty służą najczęściej do zapewnienia interaktywności poprzez reagowanie na zdarzenia, sprawdzania poprawności formularzy lub budowania elementów nawigacyjnych. Podczas wzbogacania funkcjonalności strony internetowej istotne jest, aby żaden element serwisu nie stał się niedostępny po wyłączeniu obsługi JavaScriptu w przeglądarce. Skrypt JavaScriptu ma znacznie ograniczony dostęp do komputera użytkownika (o ile nie zostanie podpisany cyfrowo). Niektóre strony WWW zbudowane są z wykorzystaniem JavaScriptu po stronie serwera, jednakże znacznie częściej korzysta się w tym przypadku z innych języków.
 
 
-## Warunkowe logowanie
+## Zmienne
 
-Dobrze wiemy, że JavaScript to bardzo elastyczny język. Nieraz potrzebujemy warunkowego
-wykonania instrukcji. Dla łatwiejszego zrozumienia przykładu tworzymy prosty obiekt
-
-```javascript
-var user = {
-	name: 'Luke',
-	showName: function() {
-		return 'Name: ' + this.name;
-	}
-};
-```
-
-Obiekt użytkownika zawiera nazwę i funkcję. Nasz cel to wyświetlenie `user.name`, jeśli
-istnieje obiekt `user`.
+Brak instrukcji `var` przed nazwą zmiennej tworzy w JavaScript zmienną o zasięgu globalnym. Nie zawsze tego chcemy.
 
 ```javascript
-console.log(user && user.name);
+var name     = "John";
+var fullname = "Doe";
 ```
 
-W ten sposób wyświetlisz w konsoli właśność `name`, jeśli istnieje obiekt `user`.
-Możliwości tego triku nie kończą się na przekazaniu właśności obiektu. A może funkcja?
+Jednak wielokrotne użyci instrukcji `var` wcale nie jest najlepszym sposobem na tworzenie zmiennych o mniejszym zasięgu. Możliwe jest zadeklarowanie wszystkich zmiennych, których potrzebujemy w danym momencie.
 
 ```javascript
-console.log(user && user.showName());
+var name = "John", fullname = "Doe";
 ```
 
-Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
+Co lepsze. Dostępna jest także inicjalizacja zmiennych.
+
+
+TODO compose with hoisting...
+
+## Domyślne wartości zmiennych
+
+Nie zawsze wiesz czy szukana zmienna istnieje lub została zainicjalizowana. Ponowne 
+przypisanie wartości zatrze informacje o dotychczasowej zmiennej. Istnieje łatwe
+sprzwdzenie czy istnieje dana zmienna lub przypisanie jej wartości domyślnej.
+
+```javascript
+var app = app || {};
+```
+
+Przykładowe użycie...
+
+## Średniki i nowe linie
+
+JavaScript nie wymaga średników w pewnych miejscach naszego kodu. Jednak dla większej czytelności oraz pewności, że dostaniemy oczekiwany wynik stosujmy pewne zasady. Oczywiście poniższy kod jest w pełni poprawny składniowo.
+
+```javascript
+function getValue() {
+	var a = 10;
+	return
+		a;
+}
+```
+
+Zastanawiasz się czy ten kod jest błędny albo dostaniesz to czego oczekujesz. Nasza funkcja zwróci `undefined`, a nie spodziewanej liczby `10`.
+
+TODO przyklad dla srednikow...
+## Referencje do obiektów DOM
+
+Doskonale wiemy, że większość jeśli nie wszystkie operacje DOM są wolne. Zatem jeśli planujemy odwoływanie się do DOM więcej niż jeden raz, stwórzmy odpowiednią referecję.
+
+```javascript
+document.getElementById('nav').className = 'test';
+document.getElementById('nav').setAttribute('display', 'block');
+```
+
+Nasz dodatkowy obiekt pozwoli na bezpośdernie odwołanie do elementu, bez konieczności szukania go w drzewie DOM.
+
+```javascript
+var obj = document.getElementById('nav');
+	obj.className = 'test';
+	obj.setAttribute('display', 'block');
+```
+
+Dodatkowa zmienna i określone instrukcje będą zawsze szybsze niż tuzin wywołań `getElementById`.
+
+## Pętla `for`
+
+Zawsze inicializujemy zmienne, których użyjemy.
+
+```javascript
+var text = "Hello, world!";
+for (var i = 0; i < text.length; i++) {
+	console.log(text.charAt(i));
+}
+```
+
+Istnieją dwie możliwości na efektywniejszą pętlę.
+
+```javascript
+var len = text.length;
+for (var i = 0; i < len; i++) { }
+```
+
+Teraz nasza pętla nie pobiera długości zmiennej `text` przy każdej iteracji, a tylko porównuje wartość `i` z ustaloną długością ciągu, przechowywaną w osobnej zmiennej `len`.
+
+Zróbmy to jeszcze lepiej. Istnieją przypadki, kiedy określone zmienne są potrzebne tylko weenątrz pętli, zatem zdefiniujemy je w zasięgu pętli.
+
+```javascript
+var len = text.length;
+for (var i = 0, len = text.length; i < len; i++) { }
+```
+
+Wszystko zależy od sytacji, ale nawet najprostsza instrukcje obniża wydajność kiedy powtarza się wielokrotnie.
+## Combine control conditions and control variable changes when using loops
+
+
+Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
+One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
+
+```javascript
+var time = new Date();
+var idx = 0;
+
+for ( var x = 0; x < 1000000; x++ ) { idx++; };
+
+console.log(idx);
+console.log((new Date() - time) + 'ms');
+```
+
+Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
+However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
+
+```
+var x = 999999;
+var time = new Date();
+
+var idx = 0;
+do { idx++; } while( x-- );
+
+console.log(idx);
+console.log((new Date() - time) + 'ms');
+```
+
+If you want to take loop performance to the next level, Zakas also provides a more advanced loop optimization technique, which runs through the loop asynchronously (so cool!).
+
+## Opóźnienie
+
+Nie każdy wie, że pierwszy argument funkcji `setTimeout`, ale także `setInterval` nie musi być ciągiem znakowym. Taka sytuacja pozwala na wiele elastyczniejsze użycie funkcji.
+
+```javascript
+setTimeout('loop()', 1000);
+```
+
+Jednak zamiast wywołania funkcji przekażemy jej ciało.
+
+```javascript
+setTimeout(loop, 1000);
+```
+
+Wyobraź sobie konieczność przesłania argumentu do naszej metody, czasem nawet wielokrotnego przesłania. Takie zmienne tracą zasięg (poza zmiennymi globalnymi).
+
+```javascript
+setTimeout('loop(counter)', 1000);
+```
+
+Istnieje dobry sposób rozwiązania tego problemu, czyli funkcja anonimowa.
+
+```javascript
+setTimeout(function() { loop(counter); }, 1000);
+```
 
 ## Liczenie elementów DOM
 
@@ -406,10 +520,12 @@ for (var i = all.length; i--;) {
 	}
 }
 console.log('*: ' + all.length);
+```
 
 Określenie liczby wszystkich elementów naszej strony to proste zadanie. Niewiele trudniej
 uzyskamy inforamcje o liczbie różnych znaczników, a od tegu już prosta droga do optymalizacji.
 
+```javascript
 var sortable = [];
 for (var tag in types) {
 	sortable.push([tag, types[tag]]);
@@ -424,7 +540,6 @@ do {
 
 Teraz dokładnie wiemy ile znaczników `<div>` lub `<span>` zawiera badana strona.
 Sami wyciągamy wnioski czy każdy z nich jest konieczny.
-
 
 ## Wzorzec modułu
 
@@ -489,49 +604,72 @@ błędem, czyli dokładnie jak powinno.
 ```
 
 
-## Combine control conditions and control variable changes when using loops
+## Rzutowanie zmiennych
 
-
-Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
-One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
+Zachowaujemy ostrożność podczas rzutowanie zmiennych poprzez funkcję `parseInt`. Funkcja nie wymaga podstawy systemu liczbowego na jaki przetwarzamy pierwszy argument. Dla naszej wygody stara się o określenie podstawy systemu na podstawie przetwarzanego ciągu.
 
 ```javascript
-var time = new Date();
-var idx = 0;
-
-for ( var x = 0; x < 1000000; x++ ) { idx++; };
-
-console.log(idx);
-console.log((new Date() - time) + 'ms');
+parseInt('010');
 ```
 
-Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
-However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
-
-```
-var x = 999999;
-var time = new Date();
-
-var idx = 0;
-do { idx++; } while( x-- );
-
-console.log(idx);
-console.log((new Date() - time) + 'ms');
-```
-
-If you want to take loop performance to the next level, Zakas also provides a more advanced loop optimization technique, which runs through the loop asynchronously (so cool!).
-
-## Domyślne wartości zmiennych
-
-Nie zawsze wiesz czy szukana zmienna istnieje lub została zainicjalizowana. Ponowne 
-przypisanie wartości zatrze informacje o dotychczasowej zmiennej. Istnieje łatwe
-sprzwdzenie czy istnieje dana zmienna lub przypisanie jej wartości domyślnej.
+Pozostaje tylko pytanie, czym jest dla nas `'010'`, które rzutujemy na liczbę całkowitą. W systemie dzięsiętnym odpowiedź jest bardzo prosta, ale dla mnie ta liczba wygląda jak system ósemkowy.
 
 ```javascript
-var app = app || {};
+parseInt('010');
+>>> 10
 ```
 
-Przykładowe użycie...
+Jak się okazuje konsola Google Chrome przedstawia wynika jako `10`, jeśli nie określimy podstawy systemu liczbowego.
+
+```javascript
+parseInt('010', 10);
+>>> 10
+parseInt('010', 8);
+>>> 8
+```
+
+Spodziewane wyniki dostaniemy podczas rzutowania z określonymi podstawami systemu.
+
+```javascript
+parseInt(010);
+>>> 8
+```
+
+Jednak najciekawszy wynik mamy prze agumenci `010`, który w rzeczywiści jest wartością w systemie ósemkowym. Nasza sytuacja komplikuje się bardziej, gdyż `010` nie jest ciągiem znakowym, zatem także prawidłowym argumentem funkcji.
+
+```javascript
+> typeof 010
+  "number"
+```
+## Warunkowe logowanie
+
+Dobrze wiemy, że JavaScript to bardzo elastyczny język. Nieraz potrzebujemy warunkowego
+wykonania instrukcji. Dla łatwiejszego zrozumienia przykładu tworzymy prosty obiekt
+
+```javascript
+var user = {
+	name: 'Luke',
+	showName: function() {
+		return 'Name: ' + this.name;
+	}
+};
+```
+
+Obiekt użytkownika zawiera nazwę i funkcję. Nasz cel to wyświetlenie `user.name`, jeśli
+istnieje obiekt `user`.
+
+```javascript
+console.log(user && user.name);
+```
+
+W ten sposób wyświetlisz w konsoli właśność `name`, jeśli istnieje obiekt `user`.
+Możliwości tego triku nie kończą się na przekazaniu właśności obiektu. A może funkcja?
+
+```javascript
+console.log(user && user.showName());
+```
+
+Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
 
 ## Tak lub nie
 

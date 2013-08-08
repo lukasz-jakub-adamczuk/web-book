@@ -27,7 +27,7 @@ pdf:
 	# OS X: http://www.tug.org/mactex/
 	# Then find its path: find /usr/ -name "pdflatex"
 	# Then symlink it: ln -s /path/to/pdflatex /usr/local/bin
-	pandoc -s $(filename).md -o $(filename).pdf \
+	pandoc -s tmp/$(filename).md -o $(filename).pdf \
 		--title-prefix $(title) \
 		--normalize \
 		--smart \
