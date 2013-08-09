@@ -24,3 +24,4 @@ Istnieje dobry sposób rozwiązania tego problemu, czyli funkcja anonimowa.
 ```javascript
 setTimeout(function() { loop(counter); }, 1000);
 ```
+

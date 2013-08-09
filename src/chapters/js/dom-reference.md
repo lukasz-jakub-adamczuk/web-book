@@ -17,3 +17,4 @@ var obj = document.getElementById('nav');
 ```
 
 Dodatkowa zmienna i określone instrukcje będą zawsze szybsze niż tuzin wywołań `getElementById`.
+

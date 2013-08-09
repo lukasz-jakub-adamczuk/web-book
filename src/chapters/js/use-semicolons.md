@@ -14,3 +14,4 @@ function getValue() {
 Zastanawiasz się czy ten kod jest błędny albo dostaniesz to czego oczekujesz. Nasza funkcja zwróci `undefined`, a nie spodziewanej liczby `10`.
 
 TODO przyklad dla srednikow...
+

@@ -28,3 +28,4 @@ console.log(user && user.showName());
 ```
 
 Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
+

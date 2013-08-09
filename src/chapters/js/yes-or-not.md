@@ -1,7 +1,7 @@
 
 ## Tak lub nie
 
-???
+Czasami...
 
 ```javascript
 if (Math.round(Math.random())) {
@@ -10,4 +10,6 @@ if (Math.round(Math.random())) {
 	// do if false
 }
 ```
+
 Bardzo prosty sposób na symulowanie działania naszego skryptu.
+

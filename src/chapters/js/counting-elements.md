@@ -32,3 +32,4 @@ console.log('  ids & classes: ' + ids + ', ' + classes);
 console.log('All scripts:     ' + script.length);
 console.log('  src & async:   ' + srcs + ', ' + async);
 ```
+

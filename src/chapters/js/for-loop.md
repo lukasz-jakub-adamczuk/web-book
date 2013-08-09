@@ -27,3 +27,4 @@ for (var i = 0, len = text.length; i < len; i++) { }
 ```
 
 Wszystko zależy od sytacji, ale nawet najprostsza instrukcje obniża wydajność kiedy powtarza się wielokrotnie.
+

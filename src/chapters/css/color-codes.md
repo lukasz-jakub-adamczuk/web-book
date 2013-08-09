@@ -30,3 +30,4 @@ Potrzebowaliśmy koloru `#c54218`, a otrzymaliśmy `#cc4411`, czy całkiem blisk
 'Uwaga:' Nie wszystkie kolory tak równie łatwo interpoluje się do wartości skróconych.
 
 Dla wyjaśnienia ciemniejszy i najbliższy białemu kolor to `#eee`, który jest dość ciemny.
+

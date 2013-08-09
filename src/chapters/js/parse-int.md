@@ -36,3 +36,4 @@ Jednak najciekawszy wynik mamy prze agumenci `010`, który w rzeczywiści jest w
 > typeof 010
   "number"
 ```
+

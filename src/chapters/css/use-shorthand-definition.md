@@ -39,4 +39,5 @@ p {
 
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
-VERIFY
+TODO VERIFY
+

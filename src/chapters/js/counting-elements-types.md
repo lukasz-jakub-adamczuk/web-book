@@ -37,3 +37,4 @@ do {
 
 Teraz dokładnie wiemy ile znaczników `<div>` lub `<span>` zawiera badana strona.
 Sami wyciągamy wnioski czy każdy z nich jest konieczny.
+
