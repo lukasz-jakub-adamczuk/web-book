@@ -1,10 +1,31 @@
 \newpage
 
+# HTML
+
+## Wprowadzenie
+
+HTML pozwala opisać strukturę informacji zawartych wewnątrz strony internetowej, nadając znaczenie poszczególnym fragmentom tekstu – formując hiperłącza, akapity, nagłówki, listy – oraz osadza w tekście dokumentu obiekty plikowe np. multimedia bądź elementy baz danych np. interaktywne formularze danych.
+HTML umożliwia określenie wyglądu dokumentu w przeglądarce internetowej. Do szczegółowego opisu formatowania akapitów, nagłówków, użytych czcionek i kolorów, zalecane jest wykorzystywanie kaskadowych arkuszy stylów.
+
+HTML 5 poza dodaniem nowych elementów, usprawniających tworzenie serwisów i aplikacji internetowych, doprecyzowuje wiele niejasności w specyfikacji HTML 4, dotyczących przede wszystkim sposobu obsługi błędów. Niejasności co do sposobu, w jaki przeglądarki powinny obsługiwać błędy w kodzie HTML są jedną z podstawowych przyczyn, dla której wiele serwisów internetowych, napisanych z naruszeniem specyfikacji, w różnych przeglądarkach działa w inny sposób – w niektórych działając, w innych nie. Dzięki HTML-owi 5 obsługa błędów ma być ta sama we wszystkich przeglądarkach, czyli zły element będzie działać w każdej przeglądarce albo żadnej.
+
+## Używaj atrybutów `placeholder`
+
+Pola tekstowe formularzy w HTML5 posiadają nowy atrybut `placeholder`. Wartość atrybutu pokazywana jest do momentu wpisania czegokolwiek w polu przez użytkownika, co stanowi wówczas wartość atrubutu `value`.
+
+```html
+<input name="username" type="text" placeholder="John Doe" />
+```
+
+Najważniejsze, że całość działa bez dodatkowego JavaScriptu, który kiedyś sztucznie tworzył analogiczne rozwiązania.
+s\newpage
+
 # CSS
 
 ## Wprowadzenie
 
 CSS został stworzony w celu odseparowania struktury dokumentu od formy jego prezentacji. Separacja ta zwiększa zakres dostępności witryny, zmniejsza zawiłość dokumentu, ułatwia wprowadzanie zmian w strukturze dokumentu. CSS ułatwia także zmiany w renderowaniu strony w zależności od obsługiwanego medium (ekran, palmtop, dokument w druku, czytnik ekranowy). Stosowanie zewnętrznych arkuszy CSS daje możliwość zmiany wyglądu wielu stron naraz bez ingerowania w sam kod (X)HTML, ponieważ arkusze mogą być wspólne dla wielu dokumentów.
+
 
 ## Rozmazany tekst
 
@@ -67,6 +88,7 @@ Aktaulna wersja, jeśli potrzebujesz wsparcia w IE8 lub nowszych przeglądarkach
 }
 ```
 
+
 ## Krótsze kody kolorów
 
 Używanie skróconych kodów kolorów nie jest niczym nowym, ale wiele osób zwyczajnie, o tym zapomina. Niektórzy użytkownicy pamiętają jeszcze 216 bezpiecznych kolorów w przeglądarkach, choć dostępne spektrum dla 3 składowych to 256^3, czyli 16777216 kolorów.
@@ -99,6 +121,7 @@ Potrzebowaliśmy koloru `#c54218`, a otrzymaliśmy `#cc4411`, czy całkiem blisk
 
 Dla wyjaśnienia ciemniejszy i najbliższy białemu kolor to `#eee`, który jest dość ciemny.
 
+
 ## Połącz razem wiele skrótów i wartości definicji
 
 Nieustanna optymalizacja naszych stylów, prowadzi czasami do trudnych w odnalezieniu błędów. Nadpisywanie właściwości skrótowych jest dobrym rozwiązanie, bo często zaoszczędzamy kilka znaków w naszych stylach.
@@ -126,6 +149,7 @@ Zatem wystarczyłoby samo zdefiniowanie samych kolorów. O ile mniej kodu. Szybk
 
 Jeśli nadpisujemy pojedyncze właściwości lub style, przeważnie lepsze jest zdefiniowanie tego samego raz i odpowiednie nadpisanie reguły.
 
+
 ## Krótsze definicje właściwości
 
 Arkusze stylów kaskadowych zostały pomyślane w ten sposób, aby programiści tworzyli kod jak najszybciej. Poszczególne właściwości zawierają szereg skrótów, które w jednej linii definiują wiele właściwości.
@@ -148,6 +172,7 @@ Prosta definicja `border` umożliwia ustawienie zarównie wielkości obramowania
 ```
 
 Po pierwsze waga pliku CSS jest większa. Dodatkowo analiza takich stylów bywa kłopotliwa, bo zmiana w jednym miejscu, bywa nadpisywana kolejną regułą w dalszej części.
+
 
 ## Obrotowy link
 
@@ -198,7 +223,7 @@ Kształt całego rozwiązania stanowią odpowiednie style, podstawowe dla tagów
 }
 ```
 
-Klasa .roll-link stanowi zasady dla naszych obrotowych linków. Poza podstawowymi i bardzo dobrze znanymi, jak kolor, grubość tekstu określono kilka kilka innych. Sposób wyświetlania jako liniowo-blokowy oraz najważniejsze, perspective i perspective-origin.
+Klasa `.roll-link` stanowi zasady dla naszych obrotowych linków. Poza podstawowymi i bardzo dobrze znanymi, jak kolor, grubość tekstu określono kilka kilka innych. Sposób wyświetlania jako liniowo-blokowy oraz najważniejsze, perspective i perspective-origin.
 
 Problem stanowi brak pełnego wsparcia dla tych właściwości CSS3, ale prefiksy działają. Poza tym obie właściwości wpierają tylko transformacje 3d, więc występują razem.
 
@@ -233,7 +258,7 @@ Problem stanowi brak pełnego wsparcia dla tych właściwości CSS3, ale prefiks
 }
 ```
 
-Element span jest dzieckiem znacznika a, a jednocześnie pojemnikiem dla generowanego automatycznie pseudo elementu :after. Przejście ease elementu span następuje w momencie pojawienia się kursora myszy nad linkiem. Wówczas po 400ms zmienia się także kolor tła elementu.
+Element span jest dzieckiem znacznika a, a jednocześnie pojemnikiem dla generowanego automatycznie pseudo elementu `:after`. Przejście ease elementu span następuje w momencie pojawienia się kursora myszy nad linkiem. Wówczas po 400ms zmienia się także kolor tła elementu.
 
 ```css
 .roll-link span:after {
@@ -265,6 +290,7 @@ Jeszcze większa magia dotyczy pseudo-elementu wstawianego po znaczniku span. Te
 ### Podsumowanie
 
 Oto prosty sposób wykorzystania transformacji 3d w celu osiągnięcia interesującego efektu. Pewien problem stanowi jeszcze odpowiednie wsparcie przez nowoczesne, nie mówiąc o wszystkich przeglądarkach. Jeśli taki efekt nie stanowi kluczowego mechanizmu strony ani uniemożliwia korzystania ze strony w starszych będzie traktowany jako dodatkowy krok w kierunku przyszłości i ukłon w stronę użytkowników korzystających z nowoczesnych przeglądarek.
+
 
 ## Skrótowe wartości właściwości
 
@@ -306,7 +332,8 @@ p {
 
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
-VERIFY
+TODO VERIFY
+
 \newpage
 
 # JavaScript
@@ -328,13 +355,15 @@ var fullname = "Doe";
 Jednak wielokrotne użyci instrukcji `var` wcale nie jest najlepszym sposobem na tworzenie zmiennych o mniejszym zasięgu. Możliwe jest zadeklarowanie wszystkich zmiennych, których potrzebujemy w danym momencie.
 
 ```javascript
-var name = "John", fullname = "Doe";
+var name = "John",
+    fullname = "Doe";
 ```
 
 Co lepsze. Dostępna jest także inicjalizacja zmiennych.
 
 
 TODO compose with hoisting...
+
 
 ## Domyślne wartości zmiennych
 
@@ -347,6 +376,7 @@ var app = app || {};
 ```
 
 Przykładowe użycie...
+
 
 ## Średniki i nowe linie
 
@@ -363,6 +393,8 @@ function getValue() {
 Zastanawiasz się czy ten kod jest błędny albo dostaniesz to czego oczekujesz. Nasza funkcja zwróci `undefined`, a nie spodziewanej liczby `10`.
 
 TODO przyklad dla srednikow...
+
+
 ## Referencje do obiektów DOM
 
 Doskonale wiemy, że większość jeśli nie wszystkie operacje DOM są wolne. Zatem jeśli planujemy odwoływanie się do DOM więcej niż jeden raz, stwórzmy odpowiednią referecję.
@@ -382,6 +414,22 @@ var obj = document.getElementById('nav');
 
 Dodatkowa zmienna i określone instrukcje będą zawsze szybsze niż tuzin wywołań `getElementById`.
 
+
+## Przechowuj selektory
+
+Dobrze wiesz, że operacje przeszukiwania DOM są wolne. Jeśli planujesz wykorzystanie danych selektorów więcej niż jeden raz, zapisz je do konkretnych zmiennych.
+
+```javascript
+document.getElementById('wrapper');
+```
+
+Zmienna `wrapper` ogranicza kosztowne operacje na drzewie DOM.
+
+```javascript
+var wrapper = document.getElementById('wrapper');
+```
+
+Teraz, gdy przyjdzie potrzeba modyfikacji lub ponownego znalezienia elementu `#wrapper` istnieje referencja do niego.
 ## Pętla `for`
 
 Zawsze inicializujemy zmienne, których użyjemy.
@@ -410,8 +458,9 @@ for (var i = 0, len = text.length; i < len; i++) { }
 ```
 
 Wszystko zależy od sytacji, ale nawet najprostsza instrukcje obniża wydajność kiedy powtarza się wielokrotnie.
-## Combine control conditions and control variable changes when using loops
 
+
+## Combine control conditions and control variable changes when using loops
 
 Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
 One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
@@ -429,7 +478,7 @@ console.log((new Date() - time) + 'ms');
 Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
 However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
 
-```
+```javascript
 var x = 999999;
 var time = new Date();
 
@@ -441,6 +490,35 @@ console.log((new Date() - time) + 'ms');
 ```
 
 If you want to take loop performance to the next level, Zakas also provides a more advanced loop optimization technique, which runs through the loop asynchronously (so cool!).
+
+
+## Unikaj zwrcania niezdefiniowanych zmiennych w funkcji
+
+Pamiętasz doskonale, że JavaScript przechowuje zmienne z określonym zasięgiem. Globalny zasięg zmiennych to ostatnia rzecz jakiej potrzebujemy.
+
+```javascript
+function sum(a, b) {
+    r = a + b;
+    return r;
+}
+```
+
+Dokładnie to dzieje się w powyższym przykładzie. Funkcja zwraca sumę dwóch liczb, jednak nie deklaruje zmiennej. Jeśli użyjemy `var` w funkcji to zadeklarujemy dodatkową zmienną, ale przez to nie będzie ona przechowywana w zasięgu globalnym.
+
+```javascript
+function sum(a, b) {
+    var r = a + b;
+    return r;
+}
+```
+
+Nie każdy przypadek jest równie prosty, jednak zmienne lokalne są bezpieczniejsze niż globalne. Nasz kod będzie jeszcze lepszy, gdy od razu zwrócimy sumę argumentów.
+
+```javascript
+function sum(a, b) {
+    return a + b;
+}
+```
 
 ## Opóźnienie
 
@@ -467,6 +545,7 @@ Istnieje dobry sposób rozwiązania tego problemu, czyli funkcja anonimowa.
 ```javascript
 setTimeout(function() { loop(counter); }, 1000);
 ```
+
 
 ## Liczenie elementów DOM
 
@@ -501,6 +580,7 @@ console.log('  ids & classes: ' + ids + ', ' + classes);
 console.log('All scripts:     ' + script.length);
 console.log('  src & async:   ' + srcs + ', ' + async);
 ```
+
 
 ## Liczenie elementów DOM według typu
 
@@ -540,6 +620,7 @@ do {
 
 Teraz dokładnie wiemy ile znaczników `<div>` lub `<span>` zawiera badana strona.
 Sami wyciągamy wnioski czy każdy z nich jest konieczny.
+
 
 ## Wzorzec modułu
 
@@ -641,6 +722,8 @@ Jednak najciekawszy wynik mamy prze agumenci `010`, który w rzeczywiści jest w
 > typeof 010
   "number"
 ```
+
+
 ## Warunkowe logowanie
 
 Dobrze wiemy, że JavaScript to bardzo elastyczny język. Nieraz potrzebujemy warunkowego
@@ -671,9 +754,10 @@ console.log(user && user.showName());
 
 Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
 
+
 ## Tak lub nie
 
-???
+Czasami...
 
 ```javascript
 if (Math.round(Math.random())) {
@@ -682,4 +766,6 @@ if (Math.round(Math.random())) {
 	// do if false
 }
 ```
+
 Bardzo prosty sposób na symulowanie działania naszego skryptu.
+

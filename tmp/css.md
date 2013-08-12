@@ -6,6 +6,7 @@
 
 CSS został stworzony w celu odseparowania struktury dokumentu od formy jego prezentacji. Separacja ta zwiększa zakres dostępności witryny, zmniejsza zawiłość dokumentu, ułatwia wprowadzanie zmian w strukturze dokumentu. CSS ułatwia także zmiany w renderowaniu strony w zależności od obsługiwanego medium (ekran, palmtop, dokument w druku, czytnik ekranowy). Stosowanie zewnętrznych arkuszy CSS daje możliwość zmiany wyglądu wielu stron naraz bez ingerowania w sam kod (X)HTML, ponieważ arkusze mogą być wspólne dla wielu dokumentów.
 
+
 ## Rozmazany tekst
 
 Hej, dziś krótko.
@@ -67,6 +68,7 @@ Aktaulna wersja, jeśli potrzebujesz wsparcia w IE8 lub nowszych przeglądarkach
 }
 ```
 
+
 ## Krótsze kody kolorów
 
 Używanie skróconych kodów kolorów nie jest niczym nowym, ale wiele osób zwyczajnie, o tym zapomina. Niektórzy użytkownicy pamiętają jeszcze 216 bezpiecznych kolorów w przeglądarkach, choć dostępne spektrum dla 3 składowych to 256^3, czyli 16777216 kolorów.
@@ -99,6 +101,7 @@ Potrzebowaliśmy koloru `#c54218`, a otrzymaliśmy `#cc4411`, czy całkiem blisk
 
 Dla wyjaśnienia ciemniejszy i najbliższy białemu kolor to `#eee`, który jest dość ciemny.
 
+
 ## Połącz razem wiele skrótów i wartości definicji
 
 Nieustanna optymalizacja naszych stylów, prowadzi czasami do trudnych w odnalezieniu błędów. Nadpisywanie właściwości skrótowych jest dobrym rozwiązanie, bo często zaoszczędzamy kilka znaków w naszych stylach.
@@ -126,6 +129,7 @@ Zatem wystarczyłoby samo zdefiniowanie samych kolorów. O ile mniej kodu. Szybk
 
 Jeśli nadpisujemy pojedyncze właściwości lub style, przeważnie lepsze jest zdefiniowanie tego samego raz i odpowiednie nadpisanie reguły.
 
+
 ## Krótsze definicje właściwości
 
 Arkusze stylów kaskadowych zostały pomyślane w ten sposób, aby programiści tworzyli kod jak najszybciej. Poszczególne właściwości zawierają szereg skrótów, które w jednej linii definiują wiele właściwości.
@@ -148,6 +152,7 @@ Prosta definicja `border` umożliwia ustawienie zarównie wielkości obramowania
 ```
 
 Po pierwsze waga pliku CSS jest większa. Dodatkowo analiza takich stylów bywa kłopotliwa, bo zmiana w jednym miejscu, bywa nadpisywana kolejną regułą w dalszej części.
+
 
 ## Obrotowy link
 
@@ -198,7 +203,7 @@ Kształt całego rozwiązania stanowią odpowiednie style, podstawowe dla tagów
 }
 ```
 
-Klasa .roll-link stanowi zasady dla naszych obrotowych linków. Poza podstawowymi i bardzo dobrze znanymi, jak kolor, grubość tekstu określono kilka kilka innych. Sposób wyświetlania jako liniowo-blokowy oraz najważniejsze, perspective i perspective-origin.
+Klasa `.roll-link` stanowi zasady dla naszych obrotowych linków. Poza podstawowymi i bardzo dobrze znanymi, jak kolor, grubość tekstu określono kilka kilka innych. Sposób wyświetlania jako liniowo-blokowy oraz najważniejsze, perspective i perspective-origin.
 
 Problem stanowi brak pełnego wsparcia dla tych właściwości CSS3, ale prefiksy działają. Poza tym obie właściwości wpierają tylko transformacje 3d, więc występują razem.
 
@@ -233,7 +238,7 @@ Problem stanowi brak pełnego wsparcia dla tych właściwości CSS3, ale prefiks
 }
 ```
 
-Element span jest dzieckiem znacznika a, a jednocześnie pojemnikiem dla generowanego automatycznie pseudo elementu :after. Przejście ease elementu span następuje w momencie pojawienia się kursora myszy nad linkiem. Wówczas po 400ms zmienia się także kolor tła elementu.
+Element span jest dzieckiem znacznika a, a jednocześnie pojemnikiem dla generowanego automatycznie pseudo elementu `:after`. Przejście ease elementu span następuje w momencie pojawienia się kursora myszy nad linkiem. Wówczas po 400ms zmienia się także kolor tła elementu.
 
 ```css
 .roll-link span:after {
@@ -265,6 +270,7 @@ Jeszcze większa magia dotyczy pseudo-elementu wstawianego po znaczniku span. Te
 ### Podsumowanie
 
 Oto prosty sposób wykorzystania transformacji 3d w celu osiągnięcia interesującego efektu. Pewien problem stanowi jeszcze odpowiednie wsparcie przez nowoczesne, nie mówiąc o wszystkich przeglądarkach. Jeśli taki efekt nie stanowi kluczowego mechanizmu strony ani uniemożliwia korzystania ze strony w starszych będzie traktowany jako dodatkowy krok w kierunku przyszłości i ukłon w stronę użytkowników korzystających z nowoczesnych przeglądarek.
+
 
 ## Skrótowe wartości właściwości
 
@@ -306,4 +312,5 @@ p {
 
 Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
-VERIFY
+TODO VERIFY
+

@@ -19,13 +19,15 @@ var fullname = "Doe";
 Jednak wielokrotne użyci instrukcji `var` wcale nie jest najlepszym sposobem na tworzenie zmiennych o mniejszym zasięgu. Możliwe jest zadeklarowanie wszystkich zmiennych, których potrzebujemy w danym momencie.
 
 ```javascript
-var name = "John", fullname = "Doe";
+var name = "John",
+    fullname = "Doe";
 ```
 
 Co lepsze. Dostępna jest także inicjalizacja zmiennych.
 
 
 TODO compose with hoisting...
+
 
 ## Domyślne wartości zmiennych
 
@@ -38,6 +40,7 @@ var app = app || {};
 ```
 
 Przykładowe użycie...
+
 
 ## Średniki i nowe linie
 
@@ -54,6 +57,8 @@ function getValue() {
 Zastanawiasz się czy ten kod jest błędny albo dostaniesz to czego oczekujesz. Nasza funkcja zwróci `undefined`, a nie spodziewanej liczby `10`.
 
 TODO przyklad dla srednikow...
+
+
 ## Referencje do obiektów DOM
 
 Doskonale wiemy, że większość jeśli nie wszystkie operacje DOM są wolne. Zatem jeśli planujemy odwoływanie się do DOM więcej niż jeden raz, stwórzmy odpowiednią referecję.
@@ -73,6 +78,22 @@ var obj = document.getElementById('nav');
 
 Dodatkowa zmienna i określone instrukcje będą zawsze szybsze niż tuzin wywołań `getElementById`.
 
+
+## Przechowuj selektory
+
+Dobrze wiesz, że operacje przeszukiwania DOM są wolne. Jeśli planujesz wykorzystanie danych selektorów więcej niż jeden raz, zapisz je do konkretnych zmiennych.
+
+```javascript
+document.getElementById('wrapper');
+```
+
+Zmienna `wrapper` ogranicza kosztowne operacje na drzewie DOM.
+
+```javascript
+var wrapper = document.getElementById('wrapper');
+```
+
+Teraz, gdy przyjdzie potrzeba modyfikacji lub ponownego znalezienia elementu `#wrapper` istnieje referencja do niego.
 ## Pętla `for`
 
 Zawsze inicializujemy zmienne, których użyjemy.
@@ -101,8 +122,9 @@ for (var i = 0, len = text.length; i < len; i++) { }
 ```
 
 Wszystko zależy od sytacji, ale nawet najprostsza instrukcje obniża wydajność kiedy powtarza się wielokrotnie.
-## Combine control conditions and control variable changes when using loops
 
+
+## Combine control conditions and control variable changes when using loops
 
 Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
 One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
@@ -120,7 +142,7 @@ console.log((new Date() - time) + 'ms');
 Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
 However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
 
-```
+```javascript
 var x = 999999;
 var time = new Date();
 
@@ -132,6 +154,35 @@ console.log((new Date() - time) + 'ms');
 ```
 
 If you want to take loop performance to the next level, Zakas also provides a more advanced loop optimization technique, which runs through the loop asynchronously (so cool!).
+
+
+## Unikaj zwrcania niezdefiniowanych zmiennych w funkcji
+
+Pamiętasz doskonale, że JavaScript przechowuje zmienne z określonym zasięgiem. Globalny zasięg zmiennych to ostatnia rzecz jakiej potrzebujemy.
+
+```javascript
+function sum(a, b) {
+    r = a + b;
+    return r;
+}
+```
+
+Dokładnie to dzieje się w powyższym przykładzie. Funkcja zwraca sumę dwóch liczb, jednak nie deklaruje zmiennej. Jeśli użyjemy `var` w funkcji to zadeklarujemy dodatkową zmienną, ale przez to nie będzie ona przechowywana w zasięgu globalnym.
+
+```javascript
+function sum(a, b) {
+    var r = a + b;
+    return r;
+}
+```
+
+Nie każdy przypadek jest równie prosty, jednak zmienne lokalne są bezpieczniejsze niż globalne. Nasz kod będzie jeszcze lepszy, gdy od razu zwrócimy sumę argumentów.
+
+```javascript
+function sum(a, b) {
+    return a + b;
+}
+```
 
 ## Opóźnienie
 
@@ -158,6 +209,7 @@ Istnieje dobry sposób rozwiązania tego problemu, czyli funkcja anonimowa.
 ```javascript
 setTimeout(function() { loop(counter); }, 1000);
 ```
+
 
 ## Liczenie elementów DOM
 
@@ -192,6 +244,7 @@ console.log('  ids & classes: ' + ids + ', ' + classes);
 console.log('All scripts:     ' + script.length);
 console.log('  src & async:   ' + srcs + ', ' + async);
 ```
+
 
 ## Liczenie elementów DOM według typu
 
@@ -231,6 +284,7 @@ do {
 
 Teraz dokładnie wiemy ile znaczników `<div>` lub `<span>` zawiera badana strona.
 Sami wyciągamy wnioski czy każdy z nich jest konieczny.
+
 
 ## Wzorzec modułu
 
@@ -332,6 +386,8 @@ Jednak najciekawszy wynik mamy prze agumenci `010`, który w rzeczywiści jest w
 > typeof 010
   "number"
 ```
+
+
 ## Warunkowe logowanie
 
 Dobrze wiemy, że JavaScript to bardzo elastyczny język. Nieraz potrzebujemy warunkowego
@@ -362,9 +418,10 @@ console.log(user && user.showName());
 
 Zastowowanie tej sztuczki w naszych projektach nie sprawia wiele trudności.
 
+
 ## Tak lub nie
 
-???
+Czasami...
 
 ```javascript
 if (Math.round(Math.random())) {
@@ -373,4 +430,6 @@ if (Math.round(Math.random())) {
 	// do if false
 }
 ```
+
 Bardzo prosty sposób na symulowanie działania naszego skryptu.
+
