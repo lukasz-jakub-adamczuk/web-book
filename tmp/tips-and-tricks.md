@@ -9,6 +9,23 @@ HTML umożliwia określenie wyglądu dokumentu w przeglądarce internetowej. Do 
 
 HTML 5 poza dodaniem nowych elementów, usprawniających tworzenie serwisów i aplikacji internetowych, doprecyzowuje wiele niejasności w specyfikacji HTML 4, dotyczących przede wszystkim sposobu obsługi błędów. Niejasności co do sposobu, w jaki przeglądarki powinny obsługiwać błędy w kodzie HTML są jedną z podstawowych przyczyn, dla której wiele serwisów internetowych, napisanych z naruszeniem specyfikacji, w różnych przeglądarkach działa w inny sposób – w niektórych działając, w innych nie. Dzięki HTML-owi 5 obsługa błędów ma być ta sama we wszystkich przeglądarkach, czyli zły element będzie działać w każdej przeglądarce albo żadnej.
 
+## Nowa definicja dokumentu
+
+XHTML wspierał 3 różne typy dokumentu poprzez definicje `doctype`.
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+```
+
+ HTML5 upraszcza ten schemat dzięki jednolitej i prostej definicji. Prostsza do zrozumienia, łatwiejsza do zapamiętania definicja.
+
+```html
+<!DOCTYPE html>
+```
+
+ Mimo, tego dalej wymagana dla informacji przeglądarki o typie dokumentu jaki jest serwowany.
+ 
 ## Używaj atrybutów `placeholder`
 
 Pola tekstowe formularzy w HTML5 posiadają nowy atrybut `placeholder`. Wartość atrybutu pokazywana jest do momentu wpisania czegokolwiek w polu przez użytkownika, co stanowi wówczas wartość atrubutu `value`.
@@ -334,6 +351,16 @@ Analogicznie poza marginesem, ustawimy dopełnienie elementu, obramowanie.
 
 TODO VERIFY
 
+
+## Wyłączenie zmiany rozmiaru `textarea`
+
+Nie wszystkie przeglądarki wspierają zmianę rozmiaru pola tekstowego `textarea`. Dla zachowania spójności możliwe jest wyłącznie tej funkcjonalności wszędzie.
+
+```css
+textarea {
+    resize: none
+}
+```
 \newpage
 
 # JavaScript
