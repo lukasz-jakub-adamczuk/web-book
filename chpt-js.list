@@ -3,8 +3,10 @@ variables.md
 variable-default-value.md
 use-semicolons.md
 dom-reference.md
+cache-objects.md
 for-loop.md
 think-about-loop-control.md
+avoid-returning-undeclared.md
 set-timeout.md
 counting-elements.md
 counting-elements-types.md
