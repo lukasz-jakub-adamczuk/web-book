@@ -6,6 +6,7 @@ Bardzo często zdarzało się, że kod strony stawał się nie tylko nośnikiem 
 ```html
 <div id="example" class="box" position="left" order="1"></div>
 ```
+
 Jedna z nowych funkcji w HTML5 pozwala na tworzenie dowolnych atrybutów dla naszych elementów. Jedyna zasada to wymagany przedrostek `data-`, który definiuje takie pojedyncze parametry.
 
 ```html
@@ -16,15 +17,8 @@ Parametry `position` oraz `order` są dostępne dla elementu zarówno w JS, jak
 
 TODO maybe join with getting atribute examples on JS and CSS
 
-```
-ar el = document.getElementById('wrapper');
-undefined
-el
-<div id=​"wrapper" class=​"html5">​…​</div>​
+```js
+el = document.getElementById('wrapper');
 el.setAttribute('data-order', 5)
-undefined
-el
-<div id=​"wrapper" class=​"html5" data-order=​"5">​…​</div>​
 el.getAttribute('data-order')
-"5"
 ```

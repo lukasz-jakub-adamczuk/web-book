@@ -1,9 +1,7 @@
 
 ## Wsparcie dla mediów
 
-<audio> + <video>
-
-Previously, to embed an audio or video file on web page we have to rely on third party plugin like Flash through <object> and <embed> tags. To view the media, user requires administrator privileges to install this plugin as well as the browser has to be able to support this plugin.
+Previously, to embed an audio or video file on web page we have to rely on third party plugin like Flash through `<object>` and `<embed>` tags. To view the media, user requires administrator privileges to install this plugin as well as the browser has to be able to support this plugin.
 
 ```html
 <object width="400" height="300">
@@ -13,7 +11,7 @@ Previously, to embed an audio or video file on web page we have to rely on third
 </object>
 ```
 
-HTML5 now introduces a new way to embed media via the <audio> and <video> tags. With HTML5, at least we don’t have to worry about plugins problem. But for the time being, not all browsers but most recent version of browsers offer support for HTML5 <audio> and <video> tags.
+HTML5 now introduces a new way to embed media via the `<audio>` and `<video>` tags. With HTML5, at least we don’t have to worry about plugins problem. But for the time being, not all browsers but most recent version of browsers offer support for HTML5 `<audio>` and `<video>` tags.
 
 ```html
 <audio controls="controls">

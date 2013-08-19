@@ -8,4 +8,3 @@ Pola tekstowe formularzy w HTML5 posiadają nowy atrybut `placeholder`. Wartoś�
 ```
 
 Najważniejsze, że całość działa bez dodatkowego JavaScriptu, który kiedyś sztucznie tworzył analogiczne rozwiązania.
-s
