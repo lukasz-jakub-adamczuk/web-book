@@ -1,28 +1,20 @@
 
 ## Artykuł czy sekcja
 
-HTML5 also offers new <article> and <section> tags to help us create semantic content.
+HTML5 oferuje wiele nowych znaczników, ale najważniejsze jest ich właściwe wykorzystanie. Tagi `<article>` oraz `<section>` pomagają w porządkowaniu treści.
 
 ```html
 <section>
-   ...
+    ...
 </section>
 ```
 
-<section> tag defines sections in a HTML such as headers, footers, or any other sections of content.
+Znacznik `<section>` określa fragmenty treści, analogicznie jak nagłówki czy stopki. Przykładowo wiele kategorii na stronie łatwo rozdzielimy pojedynczymi sekcjami, ale wewnątrz każdej z nich mogą pojawić się również artykuły.
 
 ```html
 <article>
-   ...
+    ...
 </article>
 ```
 
-The <article> tag is used to specify independent and self-contained content.
-
-=== Find out more about HTML5 <article> and <section> tags from links below! ===
-http://oli.jp/2009/html5-structure1/ (div vs section vs article)
-http://www.iandevlin.com/blog/2011/04/html5/html5-section-or-article
-
-
-
-translate
+Znacznik `<article>` definiuje niezależną treść, przykładowo wpisy na blogu lub artykuł na stronie. Idąc dalej, tym tropem nic nie stoi na przeszkodzie w dzieleniu długie artykułu na sekcje, jeśli istnieje taka potrzeba.
