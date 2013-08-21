@@ -1,7 +1,7 @@
 
 ## Wsparcie dla mediów
 
-Previously, to embed an audio or video file on web page we have to rely on third party plugin like Flash through `<object>` and `<embed>` tags. To view the media, user requires administrator privileges to install this plugin as well as the browser has to be able to support this plugin.
+Wcześniej, osadzanie materiałów audiowizualnych na stronach było skomplikowane. Często wymagało korzystania z zewnętrznych bibliotek, używania technologii Flash lub znaczników `<embed>`. Dostęp do takich mediów potrzebował wtyczek w przeglądarce, a te znowu uprawnień administratora, by zostały zainstalowane.
 
 ```html
 <object width="400" height="300">
@@ -11,7 +11,7 @@ Previously, to embed an audio or video file on web page we have to rely on third
 </object>
 ```
 
-HTML5 now introduces a new way to embed media via the `<audio>` and `<video>` tags. With HTML5, at least we don’t have to worry about plugins problem. But for the time being, not all browsers but most recent version of browsers offer support for HTML5 `<audio>` and `<video>` tags.
+Nareszcie HTML5 pozwala na łatwe osadzenie mediów przez znaczniki `<audio>` i `<video>`. Przynajmniej pozbywamy się potrzeby instalowania wtyczki, choć inny problem to różne wsparcie opisanych znaczników przez przeglądarki.
 
 ```html
 <audio controls="controls">
@@ -29,4 +29,4 @@ HTML5 now introduces a new way to embed media via the `<audio>` and `<video>` ta
 </audio>
 ```
 
-translate
+Wszystkie nowoczeszne przeglądarki wspierają elementy `audio` i `video`, w tym Internet Explorer 9+.
