@@ -13,11 +13,11 @@ Use `sh ./create_chapters.sh` in console, then use `make` or `make -f Makefile` 
 
 ### XHTML
 
-Older document structure.
+Older document structure. Classic tags, webstandards and common rules.
 
 ### HTML5
 
-New tags, and features for HTML5.
+New tags, and features for HTML5. New websites for a next years.
 
 ### CSS
 
@@ -25,7 +25,7 @@ Rules, examples and tips how to write effecient stylesheets. Many code ready to 
 
 ### CSS3
 
-Newer properties, and features for CSS3.
+Newer properties, and features for CSS3. Multible backgrounds, transitions, transformations, and many more.
 
 ### JavaScript
 
