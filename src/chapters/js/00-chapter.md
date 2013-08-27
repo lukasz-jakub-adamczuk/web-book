@@ -4,5 +4,6 @@
 
 ## Wprowadzenie
 
-Najczęściej spotykanym zatosowaniem języka JavaScript są strony WWW. Skrypty służą najczęściej do zapewnienia interaktywności poprzez reagowanie na zdarzenia, sprawdzania poprawności formularzy lub budowania elementów nawigacyjnych. Podczas wzbogacania funkcjonalności strony internetowej istotne jest, aby żaden element serwisu nie stał się niedostępny po wyłączeniu obsługi JavaScriptu w przeglądarce. Skrypt JavaScriptu ma znacznie ograniczony dostęp do komputera użytkownika (o ile nie zostanie podpisany cyfrowo). Niektóre strony WWW zbudowane są z wykorzystaniem JavaScriptu po stronie serwera, jednakże znacznie częściej korzysta się w tym przypadku z innych języków.
+Główne przeznaczenie JavaScriptu to strony internetowe. Skrypty wykorzystywane są najczęściej do zapewnienia interaktywności. JavaScript obsługuje zdarzenia, sprawdza poprawność formularzy i wiele innych. JavaScript odpowiada za obsługę zachowania strony po stronie przeglądarki i wzbogaca doświadczenia użytkownika.
 
+Zgodnie ze standardami sieciowymi dostępność strony internetowej nie zależy od sposobu przeglądania i wykorzystanego medium. Najważniejsze by osoby z wyłączoną obsługą JavaScriptu równie swobodnie korzystały z funkcjonalnej strony.
