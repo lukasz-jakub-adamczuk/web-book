@@ -1,5 +1,5 @@
 
-## Unikaj zwrcania niezdefiniowanych zmiennych w funkcji
+## Unikaj zwracania niezdefiniowanych zmiennych w funkcji
 
 Pamiętasz doskonale, że JavaScript przechowuje zmienne z określonym zasięgiem. Globalny zasięg zmiennych to ostatnia rzecz jakiej potrzebujemy.
 
