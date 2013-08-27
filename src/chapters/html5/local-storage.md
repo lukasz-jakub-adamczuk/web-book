@@ -1,6 +1,6 @@
 
 ## Local Storage
 
-exaplain difference between cookies and localStarage, localSession
+Pliki cookie są przesyłane między 
 
 TODO using local storage or cookies
