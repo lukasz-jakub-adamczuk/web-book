@@ -1,7 +1,16 @@
 00-chapter.md
+reset.md
 clearfix.md
 color-codes.md
 mix-shorthand-definitions.md
 override-shorthand-definitions.md
 pseudo-elements.md
 use-shorthand-definition.md
+specify-unit-unless-0.md
+eliminate-tag-for-classes-and-ids.md
+default-values.md
+dont-redeclare-inherited-values.md
+take-advantages-of-cascades.md
+multiple-class-names.md
+use-descendant-selectors.md
+avoid-quoting-urls.md
