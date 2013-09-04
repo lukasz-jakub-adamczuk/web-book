@@ -1,7 +1,7 @@
 
 ## Klasy wielokrotne
 
-You can assign multiple class names to an element. This allows you to write several rules that define different properties, and only apply them as needed. Let’s assume you’re marking up an image gallery that contains some images that are royalty free and some that are not. There may also be a special offer on some images. Here’s the markup for three images:
+Arkusze CSS umożliwiają ustawienie wielu klas w jednym elemencie. Taki sposób pozwala na określenie pojedynczych właściwości i aplikowanie tylko wybranych. Wyobraź sobie galerię obrazów, z których kilka ma prawa autorskie, a pozostałe są wolne:
 
 ```html
 <img src="foo.gif" class="special" alt="" />
@@ -9,9 +9,9 @@ You can assign multiple class names to an element. This allows you to write seve
 <img src="baz.gif" class="royaltyfree special" alt="" />
 ```
 
-To style the images that are royalty free to make them differ from the others you can make a rule for elements that have a class name of royaltyfree, and if you want the images with a special offer to stand out a bit you can use the special class to make a CSS rule for that.
+Chcemy, aby obrazy wolne odróżniały się od pozostałych. Dlatego tworzymy klasę `royaltyfree` oraz `special` dla odróżnienia jednych od drugich.
 
-The CSS could then look something like this:
+Style CSS mają podstawowe reguły:
 
 ```css
 .royaltyfree {
@@ -23,6 +23,6 @@ The CSS could then look something like this:
 }
 ```
 
-Any images that have a class name of special will have a padding and a yellow background. Images that have a class name of royaltyfree will have a border, and those that have both class names will have a border, a padding, and a yellow background.
+Każdy obrazek o klasie `special` bedzie miał dopełnienie i żółte tło, a obrazy wolne od praw autorskich obramowanie. Analogicznie obrazy z dwoma klasami aplikują reguły obydwu selektorów, zatem dopełnienie, tło i obramowanie i żółte tło.
 
-You can take this much further – this is just a simple example. And do try to use semantic class names that describe what an element is or does rather than what it looks like.
+Możliwości takiej techniki jest wiele - to tylko tylko prosty przykład. Ważne jest tworzenie nazw klas zgodnie z ich semantycznym przeznaczeniem, a nie opisem samego wyglądu. Nicole Sullivan zaproponowała [OOCSS](http://www.stubbornella.org/content/category/general/geek/css/oocss-css-geek-general/), który korzysta z tej metody.

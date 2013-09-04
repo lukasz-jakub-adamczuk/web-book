@@ -15,7 +15,7 @@ Strony napisane w XHTML miały pewne problemy z tworzeniem semantycznej struktur
 </div>
 ```
 
- HTML5 dostarcza nowe, semantyczne znaczniki, które pozwalają na ogranicznie podobnych sytuacji. Dzięki temu struktura dokumentu jest lżejsza i czytelniejsza. Jednocześnie pisanie stylów CSS staje się elastyczniesze.
+ HTML5 dostarcza nowe, semantyczne znaczniki, które pozwalają na ogranicznie podobnych sytuacji. Dzięki temu struktura dokumentu jest lżejsza i czytelniejsza. Jednocześnie pisanie stylów CSS staje się elastyczniejsze.
 
 ```html
 <header>
