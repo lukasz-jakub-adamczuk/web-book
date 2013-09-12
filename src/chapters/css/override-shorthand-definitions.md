@@ -21,4 +21,3 @@ Prosta definicja `border` umożliwia ustawienie zarównie wielkości obramowania
 ```
 
 Po pierwsze waga pliku CSS jest większa. Dodatkowo analiza takich stylów bywa kłopotliwa, bo zmiana w jednym miejscu, bywa nadpisywana kolejną regułą w dalszej części.
-
