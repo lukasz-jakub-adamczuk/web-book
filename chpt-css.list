@@ -10,7 +10,7 @@ specify-unit-unless-0.md
 eliminate-tag-for-classes-and-ids.md
 default-values.md
 dont-redeclare-inherited-values.md
-take-advantages-of-cascades.md
+take-advantages-of-cascade.md
 multiple-class-names.md
 use-descendant-selectors.md
 avoid-quoting-urls.md
